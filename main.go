@@ -619,7 +619,7 @@ func (e *Exporter) Connect() {
         config.Cfgs[i].db.Close()
         config.Cfgs[i].db = nil;
         e.up.WithLabelValues(conf.Database,conf.Instance).Set(0)
-        log.Infoln("Connect OK, Inital query failed: ", conf.Connection)
+        log.Infoln("Connect OK, Inital query failed: ", conf.Connection+" Error"+err)
       }
     } else {
       e.up.WithLabelValues(conf.Database,conf.Instance).Set(0)
